@@ -23,7 +23,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                                 </variation>
                                 <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="oYH-s7-gmB"/>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="YNj-AR-MQ5"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -47,7 +47,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="busStopTable" destination="DeL-TF-X7W" id="4ai-4q-nEx"/>
+                        <outlet property="busStopTable" destination="DeL-TF-X7W" id="k22-U2-6rQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
