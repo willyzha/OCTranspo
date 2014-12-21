@@ -14,6 +14,7 @@
 		3FDD868E1A470B1E00A19AE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FDD868D1A470B1E00A19AE9 /* Images.xcassets */; };
 		3FDD86911A470B1E00A19AE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FDD868F1A470B1E00A19AE9 /* LaunchScreen.xib */; };
 		3FDD869D1A470B1E00A19AE9 /* OCTranspoV5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD869C1A470B1E00A19AE9 /* OCTranspoV5Tests.swift */; };
+		3FDD86A71A473F5900A19AE9 /* OCTranspoDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD86A61A473F5900A19AE9 /* OCTranspoDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		3FDD86961A470B1E00A19AE9 /* OCTranspoV5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCTranspoV5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDD869B1A470B1E00A19AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FDD869C1A470B1E00A19AE9 /* OCTranspoV5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCTranspoV5Tests.swift; sourceTree = "<group>"; };
+		3FDD86A61A473F5900A19AE9 /* OCTranspoDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCTranspoDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				3FDD86831A470B1E00A19AE9 /* AppDelegate.swift */,
 				3FDD86881A470B1E00A19AE9 /* ViewController.swift */,
+				3FDD86A61A473F5900A19AE9 /* OCTranspoDataHelper.swift */,
 				3FDD868A1A470B1E00A19AE9 /* Main.storyboard */,
 				3FDD868D1A470B1E00A19AE9 /* Images.xcassets */,
 				3FDD868F1A470B1E00A19AE9 /* LaunchScreen.xib */,
@@ -218,6 +221,7 @@
 				3FDD86891A470B1E00A19AE9 /* ViewController.swift in Sources */,
 				3FDD86871A470B1E00A19AE9 /* OCTranspoV5.xcdatamodeld in Sources */,
 				3FDD86841A470B1E00A19AE9 /* AppDelegate.swift in Sources */,
+				3FDD86A71A473F5900A19AE9 /* OCTranspoDataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

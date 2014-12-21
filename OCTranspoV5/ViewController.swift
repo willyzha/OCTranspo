@@ -22,7 +22,7 @@ class ViewController: UIViewController,  UITableViewDataSource {
         title = "\"The List\""
         busStopTable.registerClass(UITableViewCell.self,
             forCellReuseIdentifier: "Cell")
-        
+        LoadBusStopData()
     }
     
     @IBAction func add(sender: AnyObject) {
@@ -62,7 +62,7 @@ class ViewController: UIViewController,  UITableViewDataSource {
         let managedContext = appDelegate.managedObjectContext!
         
         //2
-        let entity =  NSEntityDescription.entityForName("Person",
+        let entity =  NSEntityDescription.entityForName("BusStop",
             inManagedObjectContext:
             managedContext)
         
@@ -105,7 +105,7 @@ class ViewController: UIViewController,  UITableViewDataSource {
         let managedContext = appDelegate.managedObjectContext!
         
         //2
-        let fetchRequest = NSFetchRequest(entityName:"Person")
+        let fetchRequest = NSFetchRequest(entityName:"BusStop")
         
         //3
         var error: NSError?
@@ -143,7 +143,9 @@ class ViewController: UIViewController,  UITableViewDataSource {
     }
 
     func LoadBusStopData(){
+        saveName("STOP1")
         
+        saveName("STOP2")
     }
 
 }
