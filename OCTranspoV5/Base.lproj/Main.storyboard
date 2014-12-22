@@ -4,65 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
-            <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="OCTranspoV5" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DeL-TF-X7W">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="YNj-AR-MQ5"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="DeL-TF-X7W"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="DeL-TF-X7W"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="y52-n0-G4r">
-                        <barButtonItem key="leftBarButtonItem" title="LoadData" id="m3c-pt-LRf">
-                            <connections>
-                                <action selector="loadButtonClick:" destination="vXZ-lx-hvc" id="apu-FM-FYT"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="add" id="xs2-G3-mYJ">
-                            <connections>
-                                <action selector="add:" destination="vXZ-lx-hvc" id="lSf-at-OBM"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="busStopTable" destination="DeL-TF-X7W" id="k22-U2-6rQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1549.5" y="261.75"/>
-        </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="eiu-E3-Luo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r9h-GC-N4I" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Opc-j1-St4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BSm-Ah-49I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -70,12 +16,60 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="1BX-zq-hKo"/>
+                        <segue destination="zGw-cw-BBi" kind="relationship" relationship="rootViewController" id="Llo-yl-Zkf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kN2-wc-cXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-718.5" y="261.75"/>
+            <point key="canvasLocation" x="130.5" y="-61.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wYT-uI-9Dy">
+            <objects>
+                <tableViewController id="zGw-cw-BBi" customClass="ViewController" customModule="OCTranspoV5" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="k1j-7R-whX">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="g8r-Bo-Rfr">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="zGw-cw-BBi" id="VB4-ka-DMW"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="40" id="iod-Fu-cse">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iod-Fu-cse" id="nNQ-3y-XV4">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zGw-cw-BBi" id="bnL-Yx-cEV"/>
+                            <outlet property="delegate" destination="zGw-cw-BBi" id="6oL-sB-Cj1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="uLg-RE-JpL">
+                        <barButtonItem key="leftBarButtonItem" title="Load" id="QKX-8o-N3H"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="6sq-ro-sNc" id="q3p-uG-5K3"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9kG-VP-yDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="6sq-ro-sNc">
+                    <connections>
+                        <outlet property="delegate" destination="zGw-cw-BBi" id="Aj5-79-hGE"/>
+                        <outlet property="searchBar" destination="g8r-Bo-Rfr" id="VdJ-Ri-Jy7"/>
+                        <outlet property="searchContentsController" destination="zGw-cw-BBi" id="RET-10-uFB"/>
+                        <outlet property="searchResultsDataSource" destination="zGw-cw-BBi" id="DKD-RM-eM0"/>
+                        <outlet property="searchResultsDelegate" destination="zGw-cw-BBi" id="QXL-gP-vEO"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1159" y="-54"/>
         </scene>
     </scenes>
 </document>
