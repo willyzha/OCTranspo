@@ -24,66 +24,6 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
-    @IBAction func add(sender: AnyObject) {
-        
-        /*
-        var alert = UIAlertController(title: "New name",
-            message: "Add a new name",
-            preferredStyle: .Alert)
-        
-        let saveAction = UIAlertAction(title: "Save",
-            style: .Default) { (action: UIAlertAction!) -> Void in
-                
-                let textField = alert.textFields![0] as UITextField
-                self.saveName(textField.text)
-                self.busStopTable.reloadData()
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel",
-            style: .Default) { (action: UIAlertAction!) -> Void in
-        }
-        
-        alert.addTextFieldWithConfigurationHandler {
-            (textField: UITextField!) -> Void in
-        }
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        presentViewController(alert,
-            animated: true,
-            completion: nil)
-        */
-    }
-
-
-    /*
-    func saveName(name: String) {
-        //1
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext!
-        
-        //2
-        let entity =  NSEntityDescription.entityForName("BusStop",
-            inManagedObjectContext:
-            managedContext)
-        
-        let stop = NSManagedObject(entity: entity!,
-            insertIntoManagedObjectContext:managedContext)
-        
-        //3
-        stop.setValue(name, forKey: "name")
-        
-        //4
-        var error: NSError?
-        if !managedContext.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
-        }  
-        //5
-        people.append(person)
-    }
-    */
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -170,6 +110,7 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         var busStops: [BusStop] = FileReader.parseBusStopCSV("stops", fileExtension: "txt")
         
         for stop in busStops {
+            
             println(stop.toString())
             
             saveBusStop(stop.getName(), code: stop.getCode(), id: stop.getId(), lat: stop.getLat(), long: stop.getLong(), tag: stop.getTag())
@@ -177,17 +118,6 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         
         self.tableView.reloadData()
         
-        /*
-        if let o = output {
-            println(o)
-            
-            
-            saveBusStop(, code: 8767, id: "AA010", lat: 45.439869, long: -75.695839)
-            
-            self.busStopTable.reloadData()
-            
-        }
-*/
     }
     
     func saveBusStop(name: String, code: Float, id: String, lat: Float, long: Float, tag: String) {
@@ -243,10 +173,5 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         }else{
             println(self.filteredBusStops[indexPath.row].toString())
         }
-        
     }
-    
-    
 }
-    
-
