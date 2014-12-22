@@ -15,6 +15,19 @@ class BusStopModel: NSManagedObject {
     @NSManaged var code: Float
     @NSManaged var long: Float
     @NSManaged var lat: Float
+    @NSManaged var searchTags: String
+    
+    func getId() -> String {
+        return id
+    }
+    
+    func getLatitude() -> String {
+        return "\(self.lat)"
+    }
+    
+    func getLongtitude() -> String {
+        return "\(self.long)"
+    }
     
     func getName() -> String {
         return self.name.substringWithRange(Range<String.Index>(start: advance(self.name.startIndex, 1), end: advance(self.name.endIndex, -1)))
@@ -28,5 +41,17 @@ class BusStopModel: NSManagedObject {
         return String(getCodeAsInt())
     }
     
+    func getTag() -> String {
+        return searchTags
+    }
     
+    func toString() -> String{
+        return "id:  \(getId())\ncode:  \(getCodeAsString())\nname:  \(getName())\nlat:   \(getLatitude())\nlon:   \(getLongtitude())\ntag:   \(getTag())"
+    }
+    
+    func searchMatch(searchText: String) -> Bool{
+        let result: Bool = (self.searchTags.rangeOfString(searchText.lowercaseString) != nil)
+        
+        return result
+    }
 }

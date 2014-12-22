@@ -14,6 +14,7 @@ class BusStop: NSObject{
     var code: Float
     var long: Float
     var lat: Float
+    var tag: String
     
     init(id: String, code: Float, name: String, lat: Float, long: Float){
         self.name = name
@@ -21,6 +22,10 @@ class BusStop: NSObject{
         self.code = code
         self.long = long
         self.lat = lat
+        
+        let noSpaceName = name.lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
+        self.tag = "\(name.lowercaseString) \(code) \(noSpaceName)"
     }
     
     func getName() -> String{
@@ -47,7 +52,12 @@ class BusStop: NSObject{
         return self.long
     }
     
+    func getTag() -> String{
+        return self.tag
+    }
+    
     func toString() -> String{
         return "id: \(self.id) code: \(self.code) name: \(self.name) latitude: \(self.lat) longtitude: \(self.long)"
     }
+    
 }

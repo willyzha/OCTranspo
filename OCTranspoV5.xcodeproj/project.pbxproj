@@ -89,7 +89,6 @@
 		3FDD86801A470B1E00A19AE9 /* OCTranspoV5 */ = {
 			isa = PBXGroup;
 			children = (
-				3FDD86B11A47579C00A19AE9 /* BusStopModel.swift */,
 				3FDD86AF1A474CD200A19AE9 /* FileReader.swift */,
 				3FDD86B31A47623C00A19AE9 /* BusStop.swift */,
 				3FDD86831A470B1E00A19AE9 /* AppDelegate.swift */,
@@ -98,6 +97,7 @@
 				3FDD868A1A470B1E00A19AE9 /* Main.storyboard */,
 				3FDD868D1A470B1E00A19AE9 /* Images.xcassets */,
 				3FDD868F1A470B1E00A19AE9 /* LaunchScreen.xib */,
+				3FDD86B11A47579C00A19AE9 /* BusStopModel.swift */,
 				3FDD86851A470B1E00A19AE9 /* OCTranspoV5.xcdatamodeld */,
 				3FDD86AA1A4745B400A19AE9 /* stops.txt */,
 				3FDD86811A470B1E00A19AE9 /* Supporting Files */,

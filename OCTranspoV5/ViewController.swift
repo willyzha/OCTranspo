@@ -13,6 +13,7 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
 
     var busStops = [BusStopModel]()
     var filteredBusStops = [BusStopModel]()
+    var filtering = false
     
     //@IBOutlet weak var busStopTable: UITableView!
     
@@ -142,12 +143,13 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
                 //cell.textLabel!.text = person.valueForKey("name") as String?
                 cell.stopName.text = person.getName()
                 cell.stopCode.text = person.getCodeAsString()
-                
+                self.filtering = true
             }else {
                 let person = busStops[indexPath.row]
                 //cell.textLabel!.text = person.valueForKey("name") as String?
                 cell.stopName.text = person.getName()
                 cell.stopCode.text = person.getCodeAsString()
+                self.filtering = false
             }
         
             return cell
@@ -170,7 +172,7 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         for stop in busStops {
             println(stop.toString())
             
-            saveBusStop(stop.getName(), code: stop.getCode(), id: stop.getId(), lat: stop.getLat(), long: stop.getLong())
+            saveBusStop(stop.getName(), code: stop.getCode(), id: stop.getId(), lat: stop.getLat(), long: stop.getLong(), tag: stop.getTag())
         }
         
         self.tableView.reloadData()
@@ -188,7 +190,7 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
 */
     }
     
-    func saveBusStop(name: String, code: Float, id: String, lat: Float, long: Float) {
+    func saveBusStop(name: String, code: Float, id: String, lat: Float, long: Float, tag: String) {
         //1
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         
@@ -203,7 +205,8 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         entity.code = code
         entity.lat = lat
         entity.long = long
-                
+        entity.searchTags = tag
+        
         //4
         var error: NSError?
         if !managedContext.save(&error) {
@@ -216,8 +219,10 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         self.filteredBusStops = self.busStops.filter({( busStop: BusStopModel) -> Bool in
             //var categoryMatch = (scope == "All") || (busStop.category == scope)
-            var stringMatch = busStop.name.lowercaseString.rangeOfString(searchText.lowercaseString)
-            return (stringMatch != nil) //&& categoryMatch
+            //var stringMatch = busStop.name.lowercaseString.rangeOfString(searchText.lowercaseString)
+            //return (stringMatch != nil) //&& categoryMatch
+            
+            return busStop.searchMatch(searchText)
         })
     }
     
@@ -231,8 +236,16 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         return true
     }
     
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("You selected cell #\(indexPath.row)!")
+        if filtering == false {
+            println(self.busStops[indexPath.row].toString())
+        }else{
+            println(self.filteredBusStops[indexPath.row].toString())
+        }
         
+    }
+    
     
 }
     

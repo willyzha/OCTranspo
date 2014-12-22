@@ -6,8 +6,9 @@
         <attribute name="lat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="long" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="searchTags" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BusStop" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="BusStop" positionX="-54" positionY="-9" width="128" height="135"/>
     </elements>
 </model>

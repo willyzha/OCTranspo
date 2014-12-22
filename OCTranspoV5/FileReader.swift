@@ -46,7 +46,7 @@ struct FileReader {
                 let code: Float = (seperatedStr[1] as NSString).floatValue
                 let name: String = seperatedStr[2]
                 let lat: Float = (seperatedStr[4] as NSString).floatValue
-                let long: Float = (seperatedStr[4] as NSString).floatValue
+                let long: Float = (seperatedStr[5] as NSString).floatValue
                 
                 busStops.append(BusStop(id: id, code: code, name: name, lat: lat, long: long))
                 }
