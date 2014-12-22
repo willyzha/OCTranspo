@@ -40,6 +40,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="y52-n0-G4r">
+                        <barButtonItem key="leftBarButtonItem" title="LoadData" id="m3c-pt-LRf">
+                            <connections>
+                                <action selector="loadButtonClick:" destination="vXZ-lx-hvc" id="apu-FM-FYT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="add" id="xs2-G3-mYJ">
                             <connections>
                                 <action selector="add:" destination="vXZ-lx-hvc" id="lSf-at-OBM"/>
@@ -52,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222.5" y="417.75"/>
+            <point key="canvasLocation" x="1549.5" y="261.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eiu-E3-Luo">
@@ -70,7 +75,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kN2-wc-cXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="361.5" y="424.5"/>
+            <point key="canvasLocation" x="-718.5" y="261.75"/>
         </scene>
     </scenes>
 </document>

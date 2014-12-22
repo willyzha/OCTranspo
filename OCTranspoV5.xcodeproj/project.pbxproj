@@ -14,7 +14,10 @@
 		3FDD868E1A470B1E00A19AE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FDD868D1A470B1E00A19AE9 /* Images.xcassets */; };
 		3FDD86911A470B1E00A19AE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FDD868F1A470B1E00A19AE9 /* LaunchScreen.xib */; };
 		3FDD869D1A470B1E00A19AE9 /* OCTranspoV5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD869C1A470B1E00A19AE9 /* OCTranspoV5Tests.swift */; };
-		3FDD86A71A473F5900A19AE9 /* OCTranspoDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD86A61A473F5900A19AE9 /* OCTranspoDataHelper.swift */; };
+		3FDD86AB1A4745B400A19AE9 /* stops.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3FDD86AA1A4745B400A19AE9 /* stops.txt */; };
+		3FDD86B01A474CD200A19AE9 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD86AF1A474CD200A19AE9 /* FileReader.swift */; };
+		3FDD86B21A47579C00A19AE9 /* BusStopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD86B11A47579C00A19AE9 /* BusStopModel.swift */; };
+		3FDD86B41A47623C00A19AE9 /* BusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD86B31A47623C00A19AE9 /* BusStop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,10 @@
 		3FDD86961A470B1E00A19AE9 /* OCTranspoV5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCTranspoV5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDD869B1A470B1E00A19AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FDD869C1A470B1E00A19AE9 /* OCTranspoV5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCTranspoV5Tests.swift; sourceTree = "<group>"; };
-		3FDD86A61A473F5900A19AE9 /* OCTranspoDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCTranspoDataHelper.swift; sourceTree = "<group>"; };
+		3FDD86AA1A4745B400A19AE9 /* stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stops.txt; sourceTree = "<group>"; };
+		3FDD86AF1A474CD200A19AE9 /* FileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
+		3FDD86B11A47579C00A19AE9 /* BusStopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusStopModel.swift; sourceTree = "<group>"; };
+		3FDD86B31A47623C00A19AE9 /* BusStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusStop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +87,16 @@
 		3FDD86801A470B1E00A19AE9 /* OCTranspoV5 */ = {
 			isa = PBXGroup;
 			children = (
+				3FDD86B11A47579C00A19AE9 /* BusStopModel.swift */,
+				3FDD86AF1A474CD200A19AE9 /* FileReader.swift */,
+				3FDD86B31A47623C00A19AE9 /* BusStop.swift */,
 				3FDD86831A470B1E00A19AE9 /* AppDelegate.swift */,
 				3FDD86881A470B1E00A19AE9 /* ViewController.swift */,
-				3FDD86A61A473F5900A19AE9 /* OCTranspoDataHelper.swift */,
 				3FDD868A1A470B1E00A19AE9 /* Main.storyboard */,
 				3FDD868D1A470B1E00A19AE9 /* Images.xcassets */,
 				3FDD868F1A470B1E00A19AE9 /* LaunchScreen.xib */,
 				3FDD86851A470B1E00A19AE9 /* OCTranspoV5.xcdatamodeld */,
+				3FDD86AA1A4745B400A19AE9 /* stops.txt */,
 				3FDD86811A470B1E00A19AE9 /* Supporting Files */,
 			);
 			path = OCTranspoV5;
@@ -198,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDD86AB1A4745B400A19AE9 /* stops.txt in Resources */,
 				3FDD868C1A470B1E00A19AE9 /* Main.storyboard in Resources */,
 				3FDD86911A470B1E00A19AE9 /* LaunchScreen.xib in Resources */,
 				3FDD868E1A470B1E00A19AE9 /* Images.xcassets in Resources */,
@@ -218,10 +228,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDD86B41A47623C00A19AE9 /* BusStop.swift in Sources */,
+				3FDD86B21A47579C00A19AE9 /* BusStopModel.swift in Sources */,
 				3FDD86891A470B1E00A19AE9 /* ViewController.swift in Sources */,
 				3FDD86871A470B1E00A19AE9 /* OCTranspoV5.xcdatamodeld in Sources */,
+				3FDD86B01A474CD200A19AE9 /* FileReader.swift in Sources */,
 				3FDD86841A470B1E00A19AE9 /* AppDelegate.swift in Sources */,
-				3FDD86A71A473F5900A19AE9 /* OCTranspoDataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
