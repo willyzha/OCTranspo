@@ -9,17 +9,18 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController,  UITableViewDataSource {
+class ViewController: UITableViewController,  UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate  {
 
-    var people = [NSManagedObject]()
-       
+    var busStops = [BusStopModel]()
+    var filteredBusStops = [BusStopModel]()
+    
     @IBOutlet weak var busStopTable: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\"The List\""
-        busStopTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     @IBAction func add(sender: AnyObject) {
@@ -82,14 +83,14 @@ class ViewController: UIViewController,  UITableViewDataSource {
         people.append(person)
     }
     */
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let managedContext = appDelegate.managedObjectContext!
         
         if editingStyle == UITableViewCellEditingStyle.Delete{
-            managedContext.deleteObject(people[indexPath.row] as NSManagedObject)
-            people.removeAtIndex(indexPath.row)
+            managedContext.deleteObject(busStops[indexPath.row] as NSManagedObject)
+            busStops.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
         
@@ -113,28 +114,37 @@ class ViewController: UIViewController,  UITableViewDataSource {
         
         let fetchedResults =
         managedContext.executeFetchRequest(fetchRequest,
-            error: &error) as [NSManagedObject]?
+            error: &error) as [BusStopModel]?
         
         if let results = fetchedResults {
-            people = results
+            busStops = results
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return people.count
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return self.filteredBusStops.count
+        } else {
+            return self.busStops.count
+        }
     }
     
-    func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
-            let cell =
-            tableView.dequeueReusableCellWithIdentifier("Cell")
-                as UITableViewCell
-            
-            let person = people[indexPath.row]
-            cell.textLabel!.text = person.valueForKey("name") as String?
-            
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        
+            //var candy : Candy
+        
+            if tableView == self.searchDisplayController!.searchResultsTableView {
+                let person = filteredBusStops[indexPath.row]
+                cell.textLabel!.text = person.valueForKey("name") as String?
+            }else {
+                let person = busStops[indexPath.row]
+                cell.textLabel!.text = person.valueForKey("name") as String?
+            }
+        
             return cell
     }
     
@@ -142,9 +152,7 @@ class ViewController: UIViewController,  UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
- 
-    
+   
     @IBAction func loadButtonClick(sender: AnyObject) {
         
         LoadBusStopData()
@@ -197,8 +205,30 @@ class ViewController: UIViewController,  UITableViewDataSource {
             println("Could not save \(error), \(error?.userInfo)")
         }
         //5
-        people.append(entity)
+        busStops.append(entity)
     }
 
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        self.filteredBusStops = self.busStops.filter({( busStop: BusStopModel) -> Bool in
+            //var categoryMatch = (scope == "All") || (busStop.category == scope)
+            var stringMatch = busStop.name.lowercaseString.rangeOfString(searchText.lowercaseString)
+            return (stringMatch != nil) //&& categoryMatch
+        })
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        self.filterContentForSearchText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return true
+    }
+    
+
+        
+    
 }
+    
 
