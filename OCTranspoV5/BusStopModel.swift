@@ -15,4 +15,18 @@ class BusStopModel: NSManagedObject {
     @NSManaged var code: Float
     @NSManaged var long: Float
     @NSManaged var lat: Float
+    
+    func getName() -> String {
+        return self.name.substringWithRange(Range<String.Index>(start: advance(self.name.startIndex, 1), end: advance(self.name.endIndex, -1)))
+    }
+    
+    func getCodeAsInt() -> Int{
+        return Int(code)
+    }
+    
+    func getCodeAsString() -> String{
+        return String(getCodeAsInt())
+    }
+    
+    
 }

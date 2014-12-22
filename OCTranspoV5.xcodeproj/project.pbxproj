@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FD21CF01A48B2F000655E65 /* StopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD21CEF1A48B2F000655E65 /* StopTableViewCell.swift */; };
 		3FDD86841A470B1E00A19AE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD86831A470B1E00A19AE9 /* AppDelegate.swift */; };
 		3FDD86871A470B1E00A19AE9 /* OCTranspoV5.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD86851A470B1E00A19AE9 /* OCTranspoV5.xcdatamodeld */; };
 		3FDD86891A470B1E00A19AE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD86881A470B1E00A19AE9 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FD21CEF1A48B2F000655E65 /* StopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTableViewCell.swift; sourceTree = "<group>"; };
 		3FDD867E1A470B1E00A19AE9 /* OCTranspoV5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTranspoV5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDD86821A470B1E00A19AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FDD86831A470B1E00A19AE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				3FDD86B31A47623C00A19AE9 /* BusStop.swift */,
 				3FDD86831A470B1E00A19AE9 /* AppDelegate.swift */,
 				3FDD86881A470B1E00A19AE9 /* ViewController.swift */,
+				3FD21CEF1A48B2F000655E65 /* StopTableViewCell.swift */,
 				3FDD868A1A470B1E00A19AE9 /* Main.storyboard */,
 				3FDD868D1A470B1E00A19AE9 /* Images.xcassets */,
 				3FDD868F1A470B1E00A19AE9 /* LaunchScreen.xib */,
@@ -233,6 +236,7 @@
 				3FDD86891A470B1E00A19AE9 /* ViewController.swift in Sources */,
 				3FDD86871A470B1E00A19AE9 /* OCTranspoV5.xcdatamodeld in Sources */,
 				3FDD86B01A474CD200A19AE9 /* FileReader.swift in Sources */,
+				3FD21CF01A48B2F000655E65 /* StopTableViewCell.swift in Sources */,
 				3FDD86841A470B1E00A19AE9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +429,7 @@
 				3FDD86A21A470B1E00A19AE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FDD86A31A470B1E00A19AE9 /* Build configuration list for PBXNativeTarget "OCTranspoV5Tests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +438,7 @@
 				3FDD86A51A470B1E00A19AE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

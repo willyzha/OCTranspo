@@ -14,13 +14,13 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
     var busStops = [BusStopModel]()
     var filteredBusStops = [BusStopModel]()
     
-    @IBOutlet weak var busStopTable: UITableView!
+    //@IBOutlet weak var busStopTable: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\"The List\""
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        title = "Bus Stops"
+        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     @IBAction func add(sender: AnyObject) {
@@ -133,16 +133,21 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
     
     override func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("BusStopCell") as StopTableViewCell
         
             //var candy : Candy
         
             if tableView == self.searchDisplayController!.searchResultsTableView {
                 let person = filteredBusStops[indexPath.row]
-                cell.textLabel!.text = person.valueForKey("name") as String?
+                //cell.textLabel!.text = person.valueForKey("name") as String?
+                cell.stopName.text = person.getName()
+                cell.stopCode.text = person.getCodeAsString()
+                
             }else {
                 let person = busStops[indexPath.row]
-                cell.textLabel!.text = person.valueForKey("name") as String?
+                //cell.textLabel!.text = person.valueForKey("name") as String?
+                cell.stopName.text = person.getName()
+                cell.stopCode.text = person.getCodeAsString()
             }
         
             return cell
@@ -153,8 +158,8 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         // Dispose of any resources that can be recreated.
     }
    
+
     @IBAction func loadButtonClick(sender: AnyObject) {
-        
         LoadBusStopData()
     }
     
@@ -168,7 +173,7 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
             saveBusStop(stop.getName(), code: stop.getCode(), id: stop.getId(), lat: stop.getLat(), long: stop.getLong())
         }
         
-        self.busStopTable.reloadData()
+        self.tableView.reloadData()
         
         /*
         if let o = output {
