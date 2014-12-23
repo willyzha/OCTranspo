@@ -94,6 +94,11 @@
                                 <action selector="loadButtonClick:" destination="zGw-cw-BBi" id="iom-7N-x3a"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="GPS" id="NC7-5e-IGv">
+                            <connections>
+                                <action selector="GPSButtonClick:" destination="zGw-cw-BBi" id="eQ2-0c-d4j"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="6sq-ro-sNc" id="q3p-uG-5K3"/>
