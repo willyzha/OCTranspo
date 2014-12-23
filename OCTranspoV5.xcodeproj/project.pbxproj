@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3FD14AAC1A49337500FCAEF6 /* DowntownOttawa.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD14AAB1A49337500FCAEF6 /* DowntownOttawa.gpx */; };
 		3FD14AB01A49343500FCAEF6 /* home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD14AAF1A49343500FCAEF6 /* home.gpx */; };
+		3FD14AB41A49C15900FCAEF6 /* LocationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD14AB31A49C15900FCAEF6 /* LocationListener.swift */; };
 		3FD21CF01A48B2F000655E65 /* StopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD21CEF1A48B2F000655E65 /* StopTableViewCell.swift */; };
 		3FD21CFA1A48D1BE00655E65 /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD21CF91A48D1BE00655E65 /* CoreLocationController.swift */; };
 		3FD21CFC1A48D3EB00655E65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD21CFB1A48D3EB00655E65 /* CoreLocation.framework */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		3FD14AAB1A49337500FCAEF6 /* DowntownOttawa.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = DowntownOttawa.gpx; path = ../../../Downloads/DowntownOttawa.gpx; sourceTree = "<group>"; };
 		3FD14AAF1A49343500FCAEF6 /* home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = home.gpx; path = ../../../Downloads/home.gpx; sourceTree = "<group>"; };
+		3FD14AB31A49C15900FCAEF6 /* LocationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListener.swift; sourceTree = "<group>"; };
 		3FD21CEF1A48B2F000655E65 /* StopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTableViewCell.swift; sourceTree = "<group>"; };
 		3FD21CF91A48D1BE00655E65 /* CoreLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
 		3FD21CFB1A48D3EB00655E65 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -107,6 +109,7 @@
 				3FDD86881A470B1E00A19AE9 /* ViewController.swift */,
 				3FD21CEF1A48B2F000655E65 /* StopTableViewCell.swift */,
 				3FD21CF91A48D1BE00655E65 /* CoreLocationController.swift */,
+				3FD14AB31A49C15900FCAEF6 /* LocationListener.swift */,
 				3FDD868A1A470B1E00A19AE9 /* Main.storyboard */,
 				3FDD868D1A470B1E00A19AE9 /* Images.xcassets */,
 				3FDD868F1A470B1E00A19AE9 /* LaunchScreen.xib */,
@@ -249,6 +252,7 @@
 				3FDD86B41A47623C00A19AE9 /* BusStop.swift in Sources */,
 				3FDD86B21A47579C00A19AE9 /* BusStopModel.swift in Sources */,
 				3FDD86891A470B1E00A19AE9 /* ViewController.swift in Sources */,
+				3FD14AB41A49C15900FCAEF6 /* LocationListener.swift in Sources */,
 				3FDD86871A470B1E00A19AE9 /* OCTranspoV5.xcdatamodeld in Sources */,
 				3FDD86B01A474CD200A19AE9 /* FileReader.swift in Sources */,
 				3FD21CFA1A48D1BE00655E65 /* CoreLocationController.swift in Sources */,

@@ -12,6 +12,7 @@ import CoreLocation
 class CoreLocationController : NSObject, CLLocationManagerDelegate {
     var locationManager:CLLocationManager = CLLocationManager()
     var location: CLLocation = CLLocation()
+    var locationListeners: [LocationListener] = []
     
     override init() {
         super.init()
@@ -48,6 +49,10 @@ class CoreLocationController : NSObject, CLLocationManagerDelegate {
         return "lat: \(location.coordinate.latitude) lon: \(location.coordinate.longitude)"
     }
     
+    func getCLLocation() -> CLLocation{
+        return location
+    }
+    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
         let location = locations.last as CLLocation
@@ -58,6 +63,12 @@ class CoreLocationController : NSObject, CLLocationManagerDelegate {
         
         println("didUpdateLocations:  \(location.coordinate.latitude), \(location.coordinate.longitude)")
         
-        
+        for ll in locationListeners{
+            ll.locationUpdated(self.location)
+        }
+    }
+    
+    func registerLocationListener(listener: LocationListener){
+        self.locationListeners.append(listener)
     }
 }

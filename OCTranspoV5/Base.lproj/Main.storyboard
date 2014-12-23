@@ -96,7 +96,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="GPS" id="NC7-5e-IGv">
                             <connections>
-                                <action selector="GPSButtonClick:" destination="zGw-cw-BBi" id="eQ2-0c-d4j"/>
+                                <action selector="GPSButtonClick:" destination="zGw-cw-BBi" id="pr3-9V-U0Z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

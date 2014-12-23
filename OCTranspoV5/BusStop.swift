@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class BusStop: NSObject{
     var name: String
@@ -58,6 +59,26 @@ class BusStop: NSObject{
     
     func toString() -> String{
         return "id: \(self.id) code: \(self.code) name: \(self.name) latitude: \(self.lat) longtitude: \(self.long)"
+    }
+    
+    func getCLLocationLatitude() -> CLLocationDegrees{
+        return Double(self.lat)
+    }
+    
+    func getCLLocationLontitude() -> CLLocationDegrees{
+        return Double(self.long)
+    }
+    
+    func getCLLocation() -> CLLocation{
+        return CLLocation(latitude: getCLLocationLatitude(), longitude: getCLLocationLontitude())
+    }
+    
+    func getDistance(location: CLLocation) -> CLLocationDistance{
+        return self.getCLLocation().distanceFromLocation(location)
+    }
+    
+    func getDistanceAsString(location: CLLocation) -> String{
+        return "\(self.getCLLocation().distanceFromLocation(location))"
     }
     
 }

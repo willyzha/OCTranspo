@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import CoreLocation
 
-class ViewController: UITableViewController,  UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate  {
+class ViewController: UITableViewController,  UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, LocationListener  {
 
     var busStops = [BusStopModel]()
     var filteredBusStops = [BusStopModel]()
@@ -27,6 +27,8 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         
         self.coreLocationController     = CoreLocationController()
         
+        self.coreLocationController?.registerLocationListener(self)
+        
         let manager = CLLocationManager()
         if CLLocationManager.locationServicesEnabled() {
             manager.startUpdatingLocation()
@@ -35,7 +37,7 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             manager.requestWhenInUseAuthorization()
         }
-
+        
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -151,6 +153,8 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         entity.long = long
         entity.searchTags = tag
         
+        
+        
         //4
         var error: NSError?
         if !managedContext.save(&error) {
@@ -179,14 +183,28 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
         return true
     }
-    
+        
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected cell #\(indexPath.row)!")
         println(coreLocationController?.getLocation())
         if filtering == false {
             println(self.busStops[indexPath.row].toString())
+            
+            println("distance:  \(self.busStops[indexPath.row].getDistance(coreLocationController?.getCLLocation()))")
         }else{
             println(self.filteredBusStops[indexPath.row].toString())
         }
     }
+    
+    func locationUpdated(location: CLLocation) {
+        //
+        println("Location Update")
+        for stop in busStops {
+            stop.setDistanceAttribute(location)
+        }
+        
+        busStops.sort({$0.distance < $1.distance})
+        self.tableView.reloadData()
+    }
+        
 }
