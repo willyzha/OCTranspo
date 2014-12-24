@@ -145,7 +145,6 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
     func saveBusStop(name: String, code: Float, id: String, lat: Float, long: Float, tag: String) {
         //1
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        
         let managedContext = appDelegate.managedObjectContext!
         
         //2
@@ -213,4 +212,9 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         self.tableView.reloadData()
     }
         
+    @IBAction func testButtonClick(sender: AnyObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        CsvParser.parsesStopTimes(appDelegate)
+    }
 }

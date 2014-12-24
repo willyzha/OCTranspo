@@ -113,6 +113,11 @@
                                 <action selector="loadButtonClick:" destination="zGw-cw-BBi" id="iom-7N-x3a"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Test" id="qrg-dG-KUd">
+                            <connections>
+                                <action selector="testButtonClick:" destination="zGw-cw-BBi" id="5ai-Ss-qyz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="6sq-ro-sNc" id="q3p-uG-5K3"/>

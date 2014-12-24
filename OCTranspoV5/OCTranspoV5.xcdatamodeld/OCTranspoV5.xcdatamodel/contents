@@ -8,7 +8,17 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="searchTags" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="StopTime" representedClassName="OCTranspoV5.StopTimeModel" syncable="YES">
+        <attribute name="arrivalTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departureTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dropOffType" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="pickupType" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="stopId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stopSequence" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tripId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="BusStop" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="StopTime" positionX="-54" positionY="36" width="128" height="148"/>
     </elements>
 </model>
