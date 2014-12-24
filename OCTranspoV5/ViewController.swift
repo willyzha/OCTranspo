@@ -22,6 +22,9 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 55.0
+        
         title = "Bus Stops"
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
@@ -37,6 +40,9 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             manager.requestWhenInUseAuthorization()
         }
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        println(screenSize.width)
         
     }
     

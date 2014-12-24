@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r9h-GC-N4I">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -27,7 +28,7 @@
         <scene sceneID="wYT-uI-9Dy">
             <objects>
                 <tableViewController id="zGw-cw-BBi" customClass="ViewController" customModule="OCTranspoV5" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="k1j-7R-whX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="k1j-7R-whX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,40 +41,58 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusStopCell" rowHeight="40" id="iod-Fu-cse" customClass="StopTableViewCell" customModule="OCTranspoV5" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusStopCell" rowHeight="55" id="iod-Fu-cse" customClass="StopTableViewCell" customModule="OCTranspoV5" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iod-Fu-cse" id="nNQ-3y-XV4">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QW4-OS-XOb">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QW4-OS-XOb">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="10" width="316" height="21"/>
-                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGQ-5M-bE1">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="332" y="0.0" width="42" height="21"/>
-                                            </variation>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QW4-OS-XOb" secondAttribute="trailing" constant="50" id="4Vr-sn-Exl"/>
+                                        <constraint firstItem="uGQ-5M-bE1" firstAttribute="trailing" secondItem="nNQ-3y-XV4" secondAttribute="trailingMargin" id="Qb3-ZU-kSN"/>
+                                        <constraint firstItem="uGQ-5M-bE1" firstAttribute="top" secondItem="nNQ-3y-XV4" secondAttribute="topMargin" constant="-9" id="TK8-10-lsu"/>
+                                        <constraint firstItem="QW4-OS-XOb" firstAttribute="top" secondItem="nNQ-3y-XV4" secondAttribute="topMargin" id="ZVC-89-cbz"/>
+                                        <constraint firstItem="QW4-OS-XOb" firstAttribute="leading" secondItem="nNQ-3y-XV4" secondAttribute="leadingMargin" id="maS-nM-k3n"/>
+                                        <constraint firstItem="uGQ-5M-bE1" firstAttribute="trailing" secondItem="nNQ-3y-XV4" secondAttribute="trailingMargin" id="mwh-7C-uOx"/>
+                                    </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="QW4-OS-XOb"/>
                                             <exclude reference="uGQ-5M-bE1"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="4Vr-sn-Exl"/>
+                                            <exclude reference="ZVC-89-cbz"/>
+                                            <exclude reference="maS-nM-k3n"/>
+                                            <exclude reference="Qb3-ZU-kSN"/>
+                                            <exclude reference="TK8-10-lsu"/>
+                                            <exclude reference="mwh-7C-uOx"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="QW4-OS-XOb"/>
                                             <include reference="uGQ-5M-bE1"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="4Vr-sn-Exl"/>
+                                            <include reference="ZVC-89-cbz"/>
+                                            <include reference="maS-nM-k3n"/>
+                                            <include reference="Qb3-ZU-kSN"/>
+                                            <include reference="TK8-10-lsu"/>
+                                            <include reference="mwh-7C-uOx"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -94,11 +113,6 @@
                                 <action selector="loadButtonClick:" destination="zGw-cw-BBi" id="iom-7N-x3a"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="GPS" id="NC7-5e-IGv">
-                            <connections>
-                                <action selector="GPSButtonClick:" destination="zGw-cw-BBi" id="pr3-9V-U0Z"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="6sq-ro-sNc" id="q3p-uG-5K3"/>
@@ -115,7 +129,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1158" y="-54.75"/>
+            <point key="canvasLocation" x="975" y="-64.5"/>
         </scene>
     </scenes>
 </document>
