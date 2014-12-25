@@ -13,6 +13,7 @@
 		3FD14AB61A4A670100FCAEF6 /* stop_times.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3FD14AB51A4A670100FCAEF6 /* stop_times.txt */; };
 		3FD14AB81A4A744500FCAEF6 /* StopTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD14AB71A4A744500FCAEF6 /* StopTimeModel.swift */; };
 		3FD14AC51A4A772300FCAEF6 /* CsvParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD14AC41A4A772300FCAEF6 /* CsvParser.swift */; };
+		3FD14AC71A4B198C00FCAEF6 /* test.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3FD14AC61A4B198C00FCAEF6 /* test.csv */; };
 		3FD21CF01A48B2F000655E65 /* StopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD21CEF1A48B2F000655E65 /* StopTableViewCell.swift */; };
 		3FD21CFA1A48D1BE00655E65 /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD21CF91A48D1BE00655E65 /* CoreLocationController.swift */; };
 		3FD21CFC1A48D3EB00655E65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD21CFB1A48D3EB00655E65 /* CoreLocation.framework */; };
@@ -68,6 +69,7 @@
 		3FD14AB71A4A744500FCAEF6 /* StopTimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimeModel.swift; sourceTree = "<group>"; };
 		3FD14AB91A4A76B700FCAEF6 /* SwiftCSV.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftCSV.xcodeproj; path = "../../../Downloads/SwiftCSV-master/SwiftCSV.xcodeproj"; sourceTree = "<group>"; };
 		3FD14AC41A4A772300FCAEF6 /* CsvParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CsvParser.swift; sourceTree = "<group>"; };
+		3FD14AC61A4B198C00FCAEF6 /* test.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.csv; sourceTree = "<group>"; };
 		3FD21CEF1A48B2F000655E65 /* StopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTableViewCell.swift; sourceTree = "<group>"; };
 		3FD21CF91A48D1BE00655E65 /* CoreLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
 		3FD21CFB1A48D3EB00655E65 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -157,6 +159,7 @@
 				3FDD86851A470B1E00A19AE9 /* OCTranspoV5.xcdatamodeld */,
 				3FDD86AA1A4745B400A19AE9 /* stops.txt */,
 				3FD14AB51A4A670100FCAEF6 /* stop_times.txt */,
+				3FD14AC61A4B198C00FCAEF6 /* test.csv */,
 				3FDD86811A470B1E00A19AE9 /* Supporting Files */,
 			);
 			path = OCTranspoV5;
@@ -293,6 +296,7 @@
 			files = (
 				3FDD86AB1A4745B400A19AE9 /* stops.txt in Resources */,
 				3FDD868C1A470B1E00A19AE9 /* Main.storyboard in Resources */,
+				3FD14AC71A4B198C00FCAEF6 /* test.csv in Resources */,
 				3FD14AB61A4A670100FCAEF6 /* stop_times.txt in Resources */,
 				3FD14AB01A49343500FCAEF6 /* home.gpx in Resources */,
 				3FDD86911A470B1E00A19AE9 /* LaunchScreen.xib in Resources */,

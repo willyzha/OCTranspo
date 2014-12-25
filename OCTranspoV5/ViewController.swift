@@ -16,6 +16,7 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
     var filteredBusStops = [BusStopModel]()
     var filtering = false
     var coreLocationController:CoreLocationController?
+    var stopTimes = [StopTimeModel]()
     
     //@IBOutlet weak var busStopTable: UITableView!
     
@@ -84,6 +85,8 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
+        
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -215,6 +218,8 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
     @IBAction func testButtonClick(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         
-        CsvParser.parsesStopTimes(appDelegate)
+        //self.stopTimes = FileReader.parseStopTimesCSV("stop_times", fileExtension: "csv", appDelegate: appDelegate)
+        
+        println(stopTimes[0].toString())
     }
 }

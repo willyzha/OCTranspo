@@ -20,6 +20,7 @@ class BusStopModel: NSManagedObject {
     
     var distance: Double = 0.0
     
+    
     func getId() -> String {
         return id
     }

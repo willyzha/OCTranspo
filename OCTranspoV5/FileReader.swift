@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct FileReader {
     
@@ -60,6 +61,47 @@ struct FileReader {
         }
         
         return busStops
+    }
+    
+    static func parseStopTimesCSV(fileName: String, fileExtension: String, appDelegate: AppDelegate) -> [StopTimeModel]{
+        let data = readFromFile(fileName, fileExtension: fileExtension)
+        
+        var output: [StopTimeModel] = []
+        if let d = data{
+            output = parseStopTimesCSV(d, appDelegate: appDelegate)
+        }
+        return output
+    }
+
+    
+    static func parseStopTimesCSV(CSV: String, appDelegate: AppDelegate) -> [StopTimeModel]{
+        
+        var myStringArr = CSV.componentsSeparatedByString("\n")
+        
+        var stopTimes: [StopTimeModel] = []
+        
+        
+        
+        for str in myStringArr {
+            if str.rangeOfString("trip_id") == nil{
+                
+                let managedContext = appDelegate.managedObjectContext!
+                
+                //2
+                let entity =  NSEntityDescription.insertNewObjectForEntityForName("StopTime",inManagedObjectContext:managedContext) as StopTimeModel
+ 
+                var s = str.componentsSeparatedByString(",")
+                
+                entity.createStopTimeModel(s[0], arrivalTime: s[1], departureTime: s[2], stopId: s[3], stopSequence: Int16(s[4].toInt()!), pickupType: Int16(s[5].toInt()!), dropOffType: Int16(s[6].toInt()!))
+                
+                println(entity.toString())
+                
+                stopTimes.append(entity)
+            }
+        }
+        
+        println("DONE")
+        return stopTimes
     }
     
 }

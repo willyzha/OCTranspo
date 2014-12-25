@@ -14,6 +14,7 @@ struct CsvParser {
     static func parsesStopTimes(appDelegate: AppDelegate){
         
         //let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        /*
         let managedContext = appDelegate.managedObjectContext!
         
         let entity =  NSEntityDescription.insertNewObjectForEntityForName("StopTime",inManagedObjectContext:managedContext) as StopTimeModel
@@ -22,15 +23,33 @@ struct CsvParser {
         if !managedContext.save(&error) {
             println("Could not save \(error), \(error?.userInfo)")
         }
+*/
+        let path = NSBundle.mainBundle().pathForResource("stop_times", ofType: "txt")
 
-        let csvURL = NSURL(string: "stop_times.txt")
-        var error2: NSErrorPointer = nil
+        if let p = path{
+            let csvURL = NSURL(fileURLWithPath: p)
+            println(p)
+            var error2: NSErrorPointer = nil
         
-        if let c = csvURL {
-            let csv = CSV(contentsOfURL: c, error: error2)!
-        
-            println(csv.headers)
+            if let c = csvURL {
+                println(c)
+                let comma = NSCharacterSet(charactersInString: ",")
+                let csv = CSV(contentsOfURL: c, delimiter: comma,error: error2)!
+                println(error2)
+                println(csv.headers)
+            }
         }
+
+        /*
+        let csvURL = NSURL(string: "test.csv")
         
+        println(csvURL?.absoluteString)
+        
+        var error: NSErrorPointer = nil
+        let csv = CSV(contentsOfURL: csvURL!, error: error)
+        
+        println(csv?.headers)
+        */
     }
+    
 }
