@@ -63,12 +63,16 @@ class CoreLocationController : NSObject, CLLocationManagerDelegate {
         
         println("didUpdateLocations:  \(location.coordinate.latitude), \(location.coordinate.longitude)")
         
-        for ll in locationListeners{
-            ll.locationUpdated(self.location)
-        }
+        self.locationUpdate()
     }
     
     func registerLocationListener(listener: LocationListener){
         self.locationListeners.append(listener)
+    }
+    
+    func locationUpdate(){
+        for ll in locationListeners{
+            ll.locationUpdated(self.location)
+        }
     }
 }

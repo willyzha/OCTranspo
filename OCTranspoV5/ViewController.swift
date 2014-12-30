@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import CoreLocation
 
-class ViewController: UITableViewController,  UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, LocationListener  {
+class ViewController: UITableViewController,  UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, LocationListener {
 
     var busStops = [BusStopModel]()
     var filteredBusStops = [BusStopModel]()
@@ -25,17 +25,20 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         title = "Bus Stops"
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        self.coreLocationController     = CoreLocationController()
+        self.coreLocationController = CoreLocationController()
         
         self.coreLocationController?.registerLocationListener(self)
         
         let manager = CLLocationManager()
+        
+        println(CLLocationManager.locationServicesEnabled())
+        
         if CLLocationManager.locationServicesEnabled() {
             manager.startUpdatingLocation()
         }
         
         if CLLocationManager.authorizationStatus() == .NotDetermined {
-            manager.requestWhenInUseAuthorization()
+            manager.requestAlwaysAuthorization()
         }
         
     }
@@ -78,6 +81,16 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
+        
+        let manager = CLLocationManager()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            manager.startUpdatingLocation()
+        }
+        
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            manager.requestAlwaysAuthorization()
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,6 +100,8 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
             return self.busStops.count
         }
     }
+    
+
     
     override func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
@@ -132,7 +147,9 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
             saveBusStop(stop.getName(), code: stop.getCode(), id: stop.getId(), lat: stop.getLat(), long: stop.getLong(), tag: stop.getTag())
         }
         
-        self.tableView.reloadData()
+        
+        self.coreLocationController?.locationUpdate()
+        //self.tableView.reloadData()
         
     }
     

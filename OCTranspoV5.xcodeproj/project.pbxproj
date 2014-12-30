@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3FD14AAC1A49337500FCAEF6 /* DowntownOttawa.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD14AAB1A49337500FCAEF6 /* DowntownOttawa.gpx */; };
-		3FD14AB01A49343500FCAEF6 /* home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD14AAF1A49343500FCAEF6 /* home.gpx */; };
+		3FB8C5EF1A530D6B004526D9 /* home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FB8C5EE1A530D6B004526D9 /* home.gpx */; };
+		3FB8C5F11A53235A004526D9 /* testJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3FB8C5F01A53235A004526D9 /* testJSON.txt */; };
 		3FD14AB41A49C15900FCAEF6 /* LocationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD14AB31A49C15900FCAEF6 /* LocationListener.swift */; };
 		3FD21CF01A48B2F000655E65 /* StopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD21CEF1A48B2F000655E65 /* StopTableViewCell.swift */; };
 		3FD21CFA1A48D1BE00655E65 /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD21CF91A48D1BE00655E65 /* CoreLocationController.swift */; };
@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3FD14AAB1A49337500FCAEF6 /* DowntownOttawa.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = DowntownOttawa.gpx; path = ../../../Downloads/DowntownOttawa.gpx; sourceTree = "<group>"; };
-		3FD14AAF1A49343500FCAEF6 /* home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = home.gpx; path = ../../../Downloads/home.gpx; sourceTree = "<group>"; };
+		3FB8C5EE1A530D6B004526D9 /* home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.gpx; sourceTree = "<group>"; };
+		3FB8C5F01A53235A004526D9 /* testJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testJSON.txt; sourceTree = "<group>"; };
 		3FD14AB31A49C15900FCAEF6 /* LocationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListener.swift; sourceTree = "<group>"; };
 		3FD21CEF1A48B2F000655E65 /* StopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTableViewCell.swift; sourceTree = "<group>"; };
 		3FD21CF91A48D1BE00655E65 /* CoreLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
@@ -82,8 +82,7 @@
 		3FDD86751A470B1E00A19AE9 = {
 			isa = PBXGroup;
 			children = (
-				3FD14AAF1A49343500FCAEF6 /* home.gpx */,
-				3FD14AAB1A49337500FCAEF6 /* DowntownOttawa.gpx */,
+				3FB8C5EE1A530D6B004526D9 /* home.gpx */,
 				3FD21CFB1A48D3EB00655E65 /* CoreLocation.framework */,
 				3FDD86801A470B1E00A19AE9 /* OCTranspoV5 */,
 				3FDD86991A470B1E00A19AE9 /* OCTranspoV5Tests */,
@@ -116,6 +115,7 @@
 				3FDD86B11A47579C00A19AE9 /* BusStopModel.swift */,
 				3FDD86851A470B1E00A19AE9 /* OCTranspoV5.xcdatamodeld */,
 				3FDD86AA1A4745B400A19AE9 /* stops.txt */,
+				3FB8C5F01A53235A004526D9 /* testJSON.txt */,
 				3FDD86811A470B1E00A19AE9 /* Supporting Files */,
 			);
 			path = OCTranspoV5;
@@ -227,11 +227,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FDD86AB1A4745B400A19AE9 /* stops.txt in Resources */,
+				3FB8C5EF1A530D6B004526D9 /* home.gpx in Resources */,
+				3FB8C5F11A53235A004526D9 /* testJSON.txt in Resources */,
 				3FDD868C1A470B1E00A19AE9 /* Main.storyboard in Resources */,
-				3FD14AB01A49343500FCAEF6 /* home.gpx in Resources */,
 				3FDD86911A470B1E00A19AE9 /* LaunchScreen.xib in Resources */,
 				3FDD868E1A470B1E00A19AE9 /* Images.xcassets in Resources */,
-				3FD14AAC1A49337500FCAEF6 /* DowntownOttawa.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
