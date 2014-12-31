@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r9h-GC-N4I">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -80,6 +81,7 @@
                                 <connections>
                                     <outlet property="stopCode" destination="uGQ-5M-bE1" id="viG-ID-2XK"/>
                                     <outlet property="stopName" destination="QW4-OS-XOb" id="GBJ-ub-w1o"/>
+                                    <segue destination="800-dk-61W" kind="show" identifier="BusStopDetail" id="vTd-8Q-vxC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -115,7 +117,42 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1158" y="-54.75"/>
+            <point key="canvasLocation" x="912" y="-62"/>
+        </scene>
+        <!--Detailed Stop View Controller-->
+        <scene sceneID="aAo-7l-0wB">
+            <objects>
+                <viewController id="800-dk-61W" customClass="DetailedStopViewController" customModule="OCTranspoV5" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DG4-kv-QzC"/>
+                        <viewControllerLayoutGuide type="bottom" id="0HR-QU-fLq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Zv-G0-5P6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rc4-RR-htq">
+                                <rect key="frame" x="16" y="72" width="568" height="508"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rc4-RR-htq" firstAttribute="leading" secondItem="2Zv-G0-5P6" secondAttribute="leadingMargin" id="HM5-BY-pxa"/>
+                            <constraint firstItem="Rc4-RR-htq" firstAttribute="trailing" secondItem="2Zv-G0-5P6" secondAttribute="trailingMargin" id="l0s-gh-JUX"/>
+                            <constraint firstItem="Rc4-RR-htq" firstAttribute="top" secondItem="DG4-kv-QzC" secondAttribute="bottom" constant="8" id="qng-Lm-JYz"/>
+                            <constraint firstItem="0HR-QU-fLq" firstAttribute="top" secondItem="Rc4-RR-htq" secondAttribute="bottom" constant="20" id="sMU-zs-zJ0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="moreStopInfo" destination="Rc4-RR-htq" id="it3-RE-ROZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pj9-jL-BxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1667" y="-62"/>
         </scene>
     </scenes>
 </document>

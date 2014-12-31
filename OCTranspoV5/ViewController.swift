@@ -16,6 +16,7 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
     var filteredBusStops = [BusStopModel]()
     var filtering = false
     var coreLocationController:CoreLocationController?
+    var selectedBusStop: String = ""
     
     //@IBOutlet weak var busStopTable: UITableView!
     
@@ -205,11 +206,14 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         println("You selected cell #\(indexPath.row)!")
         println(coreLocationController?.getLocation())
         if filtering == false {
-            println(self.busStops[indexPath.row].toString())
+            
+            selectedBusStop = self.busStops[indexPath.row].toString()
+            println(selectedBusStop)
             
             println("distance:  \(self.busStops[indexPath.row].getDistance(coreLocationController?.getCLLocation()))")
         }else{
-            println(self.filteredBusStops[indexPath.row].toString())
+            selectedBusStop = self.filteredBusStops[indexPath.row].toString()
+            println(selectedBusStop)
         }
     }
     
@@ -223,5 +227,30 @@ class ViewController: UITableViewController,  UITableViewDataSource, UISearchBar
         busStops.sort({$0.distance < $1.distance})
         self.tableView.reloadData()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var secondVC: DetailedStopViewController = segue.destinationViewController as DetailedStopViewController
         
+        let indexPath: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+        
+        println(indexPath.row)
+        
+        
+        
+        if filtering == false {
+            //selectedBusStop = self.busStops[indexPath.row].toString()
+            //println(selectedBusStop)
+            
+            //println("distance:  \(self.busStops[indexPath.row].getDistance(coreLocationController?.getCLLocation()))")
+            
+            secondVC.labelText = self.busStops[indexPath.row].toString()
+        }else{
+            //selectedBusStop = self.filteredBusStops[indexPath.row].toString()
+            //println(selectedBusStop)
+            secondVC.labelText = self.filteredBusStops[indexPath.row].toString()
+        }
+
+        
+    }
+    
 }
